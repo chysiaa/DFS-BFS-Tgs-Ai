@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Solver with BFS and DFS Algorithm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static\styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body style="padding: 10px 100px;">
+    <header>
+        <h1>Comparison of Maze Solvers using BFS and DFS Algorithms</h1>
+    </header>
+    <div class="legend">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="legend-item">
+                    🟪 = Finish Point
+                </div>
+                <div class="legend-item">
+                    🟦 = Starting Point
+                </div>
+                <div class="legend-item">
+                    <span>🟥 = Obstacles</span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="legend-item">
+                    <span>🟨 = Path</span>
+                </div>
+                <div class="legend-item">
+                    <span>🟩 = Used Path</span>
+                </div>
+            </div>
+        </div>
+    </div>
+        <form method="POST">
+            <div class="row">
+                <div class="col-md-2" style="margin-top: 20px;">
+                    <input type="number" name="m" class="form-control" placeholder="Enter width x height size" min="3" step="2" required pattern="^[13579]+$">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary">Generate Maze</button>
+                </div>
+            </div>
+            <div class = "times">
+                <p>DFS: {{ execution_times['DFS'] }} seconds</p>
+                <p>BFS: {{ execution_times['BFS'] }} seconds</p>
+            </div>
+        </form>
+            <h2>Default Maze</h2>
+            <pre>{{ default_maze }}</pre>
+            <h2>DFS Solution</h2>
+            <pre>{{ maze_dfs }}
+                <p>DFS: {{ execution_times['DFS'] }} seconds</p>
+            </pre><p>
+            <h2>BFS Solution</h2>
+            <pre>{{ maze_bfs }}
+                <p>BFS: {{ execution_times['BFS'] }} seconds</p>
+            </pre>
+
+</body>
+</html>
