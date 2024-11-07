@@ -8,6 +8,7 @@ header {
     background-color: #007bff;
     color: white;
     padding: 20px 0;
+    border-radius: 6px;
 }
 h1 {
     text-align: center;
@@ -24,7 +25,7 @@ h1 {
 pre {
     background-color: #e9ecef;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
     overflow-x: auto;
 }
 h2 {
@@ -35,7 +36,7 @@ h2 {
     margin-top: 20px;
     padding: 10px;
     background-color: #e9ecef;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 .legend-item {
     display: flex;
@@ -50,4 +51,14 @@ h2 {
 
 .times{
     margin-top: 20px;
+}
+
+.conclusion{
+    margin-top: 20px;
+    color: red;
+    font-weight: 600;
+}
+
+.time{
+    font-size: 18px;
 }

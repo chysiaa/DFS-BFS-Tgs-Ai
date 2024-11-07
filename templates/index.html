@@ -44,20 +44,27 @@
                     <button type="submit" class="btn btn-primary">Generate Maze</button>
                 </div>
             </div>
-            <div class = "times">
-                <p>DFS: {{ execution_times['DFS'] }} seconds</p>
-                <p>BFS: {{ execution_times['BFS'] }} seconds</p>
+            <div class="times">
+                <p>DFS: <span style="color : #007bff">{{ execution_times['DFS'] }}</span> seconds</p>
+                <p>BFS: <span style="color : green">{{ execution_times['BFS'] }}</span> seconds</p>
+            </div>
+            <div class="conclusion">
+                {% if execution_times['DFS'] < execution_times['BFS'] %}
+                    <p>DFS is faster than BFS</p>
+                {% else %}
+                    <p>BFS is faster than DFS</p>
+                {% endif %}
             </div>
         </form>
             <h2>Default Maze</h2>
             <pre>{{ default_maze }}</pre>
             <h2>DFS Solution</h2>
             <pre>{{ maze_dfs }}
-                <p>DFS: {{ execution_times['DFS'] }} seconds</p>
+                <p class="time">DFS: {{ execution_times['DFS'] }} seconds</p>
             </pre><p>
             <h2>BFS Solution</h2>
             <pre>{{ maze_bfs }}
-                <p>BFS: {{ execution_times['BFS'] }} seconds</p>
+                <p class="time">BFS: {{ execution_times['BFS'] }} seconds</p>
             </pre>
 
 </body>
