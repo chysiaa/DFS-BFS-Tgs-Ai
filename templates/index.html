@@ -47,6 +47,8 @@
             <div class="times">
                 <p>DFS: <span style="color : #007bff">{{ execution_times['DFS'] }}</span> seconds</p>
                 <p>BFS: <span style="color : green">{{ execution_times['BFS'] }}</span> seconds</p>
+                <p>DFS: <span style="color : #007bff">{{ block_counts['DFS'] }}</span> blocks used</p>
+                <p>BFS: <span style="color : green">{{ block_counts['BFS'] }}</span> blocks used</p>
             </div>
             <div class="conclusion">
                 {% if execution_times['DFS'] < execution_times['BFS'] %}
@@ -61,10 +63,12 @@
             <h2>DFS Solution</h2>
             <pre>{{ maze_dfs }}
                 <p class="time">DFS: {{ execution_times['DFS'] }} seconds</p>
+                <p>DFS: <span style="color : #007bff">{{ block_counts['DFS'] }}</span> blocks used</p>
             </pre><p>
             <h2>BFS Solution</h2>
             <pre>{{ maze_bfs }}
                 <p class="time">BFS: {{ execution_times['BFS'] }} seconds</p>
+                <p>BFS: <span style="color : green">{{ block_counts['BFS'] }}</span> blocks used</p>
             </pre>
 
 </body>

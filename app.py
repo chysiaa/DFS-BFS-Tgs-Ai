@@ -16,6 +16,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     execution_times = {}
+    block_counts = {}
     maze_for_dfs = ""
     maze_for_bfs = ""
 
@@ -45,17 +46,19 @@ def index():
     start_time_dfs = time.time()
     dfs_maze_solver(maze_for_dfs, start, end)
     execution_times['DFS'] = time.time() - start_time_dfs
+    block_counts['DFS'] = len([cell for row in maze_for_dfs for cell in row if cell == '2'])
 
     # Run BFS solver
     start_time_bfs = time.time()
     bfs_maze_solver(maze_for_bfs, start, end)
     execution_times['BFS'] = time.time() - start_time_bfs
-
+    block_counts['BFS'] = len([cell for row in maze_for_bfs for cell in row if cell == '2'])
     maze_dfs_str = print_maze(maze_for_dfs)
     maze_bfs_str = print_maze(maze_for_bfs)
 
     return render_template("index.html", 
-                           execution_times=execution_times, 
+                           execution_times=execution_times,
+                           block_counts=block_counts, 
                            maze_dfs=maze_dfs_str, 
                            maze_bfs=maze_bfs_str,
                            default_maze=default_maze_str)
