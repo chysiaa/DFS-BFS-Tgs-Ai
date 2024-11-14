@@ -2,17 +2,10 @@ import random
 from utils.get_neighbours_for_search import get_neighbours_for_search
 
 def bfs_maze_solver(maze, start, end):
-    """
-    It takes a maze, a start and an end, and it returns a solved maze
-    
-    :param maze: the maze to be solved
-    :param start: (0, 0)
-    :param end: The end point of the maze
-    """
+
     visited = []
     queue = []
     neighbours = []
-    
 
     actual = start
 

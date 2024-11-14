@@ -13,6 +13,7 @@ header {
 h1 {
     text-align: center;
     margin: 0;
+    font-size: 36px;
 }
 .container {
     margin-top: 30px;
@@ -49,10 +50,6 @@ h2 {
     margin-right: 10px;
 }
 
-.times{
-    margin-top: 20px;
-}
-
 .conclusion{
     margin-top: 20px;
     color: red;
@@ -62,3 +59,4 @@ h2 {
 .time{
     font-size: 18px;
 }
+

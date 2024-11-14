@@ -34,9 +34,6 @@ def index():
     end = [m-2, n-2]
 
     modify(maze, m, n)
-    
-    maze[start[0]][start[1]] = '🟦'  
-    maze[end[0]][end[1]] = '🟪'     
 
     default_maze_str = print_maze(maze)
     maze_for_dfs = maze.copy()

@@ -16,59 +16,57 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="legend-item">
-                    🟪 = Finish Point
-                </div>
-                <div class="legend-item">
                     🟦 = Starting Point
                 </div>
                 <div class="legend-item">
-                    <span>🟥 = Obstacles</span>
+                    🟪 = Finish Point
                 </div>
+                <div class="legend-item">
+                    <span>🟩 = Used Path</span>
+                </div>    
             </div>
             <div class="col-md-6">
                 <div class="legend-item">
                     <span>🟨 = Path</span>
                 </div>
                 <div class="legend-item">
-                    <span>🟩 = Used Path</span>
+                    <span>🟥 = Obstacles</span>
                 </div>
             </div>
         </div>
     </div>
         <form method="POST">
             <div class="row">
-                <div class="col-md-2" style="margin-top: 20px;">
+                <div class="col-md-3" style="margin-top: 20px;">
                     <input type="number" name="m" class="form-control" placeholder="Enter width x height size" min="3" step="2" required pattern="^[13579]+$">
                 </div>
                 <div class="col-md-2">
                     <button type="submit" class="btn btn-primary">Generate Maze</button>
                 </div>
             </div>
-            <div class="times">
-                <p>DFS: <span style="color : #007bff">{{ execution_times['DFS'] }}</span> seconds</p>
-                <p>BFS: <span style="color : green">{{ execution_times['BFS'] }}</span> seconds</p>
-                <p>DFS: <span style="color : #007bff">{{ block_counts['DFS'] }}</span> blocks used</p>
-                <p>BFS: <span style="color : green">{{ block_counts['BFS'] }}</span> blocks used</p>
-            </div>
-            <div class="conclusion">
-                {% if execution_times['DFS'] < execution_times['BFS'] %}
-                    <p>DFS is faster than BFS</p>
-                {% else %}
-                    <p>BFS is faster than DFS</p>
-                {% endif %}
+            <div class="row">
+                <div class="col-md-6" style="padding-top: 20px ;">
+                    <p>DFS: {{ execution_times['DFS'] }} seconds</p>
+                    <p>DFS: {{ block_counts['DFS'] }} blocks used</p>
+                    {% if execution_times['DFS'] < execution_times['BFS'] %}
+                    <span style="color: green;">DFS is faster than BFS</span>
+                    {% else %}
+                    <span style="color: #007bff">BFS is faster than DFS</span>
+                    {% endif %}
+                </div>
+                <div class="col-md-6"style="padding-top: 20px ;">
+                    <p>BFS: {{ execution_times['BFS'] }} seconds</p>
+                    <p>BFS: {{ block_counts['BFS'] }} blocks used</p>
+                </div>
             </div>
         </form>
             <h2>Default Maze</h2>
             <pre>{{ default_maze }}</pre>
             <h2>DFS Solution</h2>
-            <pre>{{ maze_dfs }}
-                <p class="time">BFS: {{ execution_times['DFS'] }} seconds</p>
-                <p class="time">BFS: <span style="color : #007bff">{{ block_counts['DFS'] }}</span> blocks used</p>
+            <pre>{{ maze_dfs }} <p class="time">{{ execution_times['DFS'] }} seconds<br>{{ block_counts['DFS'] }} blocks used </p></pre>
+                
             </pre>
             <h2>BFS Solution</h2>
-            <pre>{{ maze_bfs }}
-                <p class="time">BFS: {{ execution_times['BFS'] }} seconds</p>
-                <p class="time">BFS: <span style="color : green">{{ block_counts['BFS'] }}</span> blocks used</p>
-            </pre>
+            <pre>{{ maze_bfs }} <p class="time">{{ execution_times['BFS'] }} seconds<br>{{ block_counts['BFS'] }} blocks used</p></pre>
 </body>
 </html>

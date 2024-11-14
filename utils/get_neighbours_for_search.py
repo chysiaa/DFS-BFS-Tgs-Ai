@@ -1,17 +1,7 @@
 from utils.get_neighbours import get_neighbours
 
 def get_neighbours_for_search(maze, i, j, visited):
-  """
-  It returns the neighbours of a given cell in the maze, 
-  but only if the cell is not a wall
   
-  :param maze: The maze we're working with
-  :param i: the current row
-  :param j: column
-  :param visited: a list of tuples that represent the coordinates of the cells that have been visited
-  :return: A list of tuples.
-  """
-
   partial_neighbours = get_neighbours(maze, i, j, visited)
   neighbours = []
 

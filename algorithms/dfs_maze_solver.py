@@ -2,13 +2,6 @@ import random
 from utils.get_neighbours_for_search import get_neighbours_for_search
 
 def dfs_maze_solver(maze, start, end):
-    """
-    It takes a maze, a start and an end, and returns a solved maze
-    
-    :param maze: The maze to be solved
-    :param start: The starting point of the maze
-    :param end: The end point of the maze
-    """
     visited = []
     stack = []
     neighbours = []
@@ -50,7 +43,7 @@ def dfs_maze_solver(maze, start, end):
                     maze[actual[0] - 1][actual[1]] = '2'
 
         maze[visited[i][0]][visited[i][1]] = '2'
-        maze[start[0]][start[1]] = '🟦'  # Mark start point
-        maze[end[0]][end[1]] = '🟪'      # Mark end point
+        maze[start[0]][start[1]] = '🟦' 
+        maze[end[0]][end[1]] = '🟪'      
 
     return visited
