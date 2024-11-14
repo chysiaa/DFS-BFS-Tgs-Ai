@@ -54,3 +54,4 @@ def bfs_maze_solver(maze, start, end):
         maze[start[0]][start[1]] = '🟦'  # Mark start point
         maze[end[0]][end[1]] = '🟪'      # Mark end point
     
+    return visited

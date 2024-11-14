@@ -45,13 +45,13 @@ def index():
     # Run DFS solver
     start_time_dfs = time.time()
     dfs_maze_solver(maze_for_dfs, start, end)
-    execution_times['DFS'] = time.time() - start_time_dfs
+    execution_times['DFS'] = "{:.11f}".format(time.time() - start_time_dfs)
     block_counts['DFS'] = len([cell for row in maze_for_dfs for cell in row if cell == '2'])
 
     # Run BFS solver
     start_time_bfs = time.time()
     bfs_maze_solver(maze_for_bfs, start, end)
-    execution_times['BFS'] = time.time() - start_time_bfs
+    execution_times['BFS'] = "{:.11f}".format(time.time() - start_time_bfs)
     block_counts['BFS'] = len([cell for row in maze_for_bfs for cell in row if cell == '2'])
     maze_dfs_str = print_maze(maze_for_dfs)
     maze_bfs_str = print_maze(maze_for_bfs)

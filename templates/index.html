@@ -62,14 +62,13 @@
             <pre>{{ default_maze }}</pre>
             <h2>DFS Solution</h2>
             <pre>{{ maze_dfs }}
-                <p class="time">DFS: {{ execution_times['DFS'] }} seconds</p>
-                <p>DFS: <span style="color : #007bff">{{ block_counts['DFS'] }}</span> blocks used</p>
-            </pre><p>
+                <p class="time">BFS: {{ execution_times['DFS'] }} seconds</p>
+                <p class="time">BFS: <span style="color : #007bff">{{ block_counts['DFS'] }}</span> blocks used</p>
+            </pre>
             <h2>BFS Solution</h2>
             <pre>{{ maze_bfs }}
                 <p class="time">BFS: {{ execution_times['BFS'] }} seconds</p>
-                <p>BFS: <span style="color : green">{{ block_counts['BFS'] }}</span> blocks used</p>
+                <p class="time">BFS: <span style="color : green">{{ block_counts['BFS'] }}</span> blocks used</p>
             </pre>
-
 </body>
 </html>
