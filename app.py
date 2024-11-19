@@ -41,7 +41,7 @@ def index():
     default_maze_str = print_maze(maze)
     maze_for_dfs = maze.copy()
     maze_for_bfs = maze.copy()
-
+    
     # Run DFS solver
     start_time_dfs = time.time()
     dfs_maze_solver(maze_for_dfs, start, end)
